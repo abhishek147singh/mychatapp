@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <link rel="stylesheet" href="css/bootstrap.css">
+   <style>
+     .prfilePic{
+           width: 150px;
+           height: 150px;
+           border-radius: 50%;
+           display: block;
+           margin: auto;
+        }
+        #Upload_PRO{
+            display: none;
+            visibility: hidden;
+        }
+   </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 bg-light">
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                        <label for="Upload_PRO" id="proFileLabel"><img src="img/unknown2.jpg" alt="" srcset="" class="prfilePic"> </label>                
+                         <input type="file" name="pro_file" id="Upload_PRO" onchange="changeProfilePic(event)">
+                         <input type="submit" value="sumit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+   function changeProfilePic(event)
+   {
+     let image = URL.createObjectURL(event.target.files[0]);
+    // document.write(image);
+    let label = document.getElementById('proFileLabel');
+    var newImage = document.createElement('img');
+    newImage.src = image;
+    newImage.classList.add('prfilePic');
+    label.innerHTML = "";
+    label.appendChild(newImage);
+   }
+    </script>
+</body>
+
+</html>

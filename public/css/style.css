@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body{
+    overflow-y: hidden;
+} */
+#logo ,
+#menu li a{
+    color: #fff;
+}
+#menu li a:hover{
+  font-weight: bolder;
+}
+#container{
+    height: 60vh;
+  
+}
+#Edit{
+    min-height: 80vh;
+    background: hsla(180, 70%, 70%, 0.8);
+}
+#Profile{
+    height:40vh;
+    background: hsla(184, 42%, 87%, 0.8);
+}
+.send #messageInp{
+    font-size: 0.6rem;
+    background: none;
+    padding: 4px;
+    width: 80%;
+    margin-left: 50px;
+}
+.send .btn{
+    padding: 10px;
+    font-size: 18px;
+    margin: 5px;
+    background: goldenrod;
+}
+#main{
+    height: 80vh;
+    background: hsla(75, 50%, 80%, 0.5);
+    overflow-y: auto;
+}
+#leftsidebar{
+    height: 89vh;
+    overflow-y: auto;
+    background: hsla(180, 11%, 84%, 0.842);
+}
+#profile{
+    height: 6rem;
+    background: hsla(180, 74%, 47%, 0.842);
+}
+#proPhoto{
+    height: 250px;
+    border-radius: 50%;
+}
+.anoImg{
+    width: 65px;
+    height: 60px;
+
+}
+
+#main .message{
+    width: 50%;
+    height: auto;
+    background: lavender;
+    padding: 5px;
+    margin: 10px;
+    font-style: bolder;
+    display: block;
+}
+#main .left{
+    float: left;
+}
+#main .right{
+    float: right;
+}
+.prfilePic{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+ }
+ #Upload_PRO{
+     display: none;
+     visibility: hidden;
+ }
+ #proFileLabel{
+     width: 100%;
+ }
+ .togle::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform:translateY(-50%);
+    width:10px;
+    height: 10px;
+    background: red;
+    border-radius: 50%;
+    box-shadow: 0 0 2px #f00,
+    0 0 5px #f00,
+    0 0 10px #f00,
+    0 0 15px #f00,
+    0 0 20px #f00,
+    0 0 25px #f00,
+    0 0 30px #f00,
+    0 0 35px #f00,
+    0 0 40px #f00;
+} 
+.activated::after{
+    background: #0f0;
+    box-shadow: 0 0 2px #0f0,
+        0 0 5px #0f0,
+       0 0 10px #0f0,
+       0 0 15px #0f0,
+       0 0 20px #0f0,
+       0 0 25px #0f0,
+       0 0 30px #0f0,
+       0 0 35px #0f0,
+       0 0 40px #0f0;
+   }
+   @media screen and (max-width:768px) {
+    #leftsidebar{
+       display: none;
+    } 
+   
+   }

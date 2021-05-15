@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="/socket.io/socket.io.js"></script> 
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid bg-dark">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 id="logo">GO Meeting</h1>
+            </div>
+            <div class="col-md-4">
+                <ul id="menu" class="nav ">
+                    <li class="nav-item float-right"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item d-md-none" id="onlineLI"><a class="nav-link" onclick="GetOnline()">Online</a></li>
+                    <li class="nav-item float-left"><a class="nav-link" href="/logout">LOG OUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 bg-light">
+
+                <div class="row">
+                    <div class="col" id="main">
+
+                    </div>
+                </div>
+
+                <form action="#" class="row py-3" id="send-container">
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" name="messageInp" id="messageInp">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" value="send" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4" id="leftsidebar">
+                <div class="card mb-2">
+                    <form action='/upload/<%= _id %>' method="post" enctype="multipart/form-data">
+                       
+                       <label for="Upload_PRO" id="proFileLabel"><img src='img/<%= userPic %>' alt="user photo" srcset="" class="prfilePic"> </label>
+                       <input type="file" name="pro_file" id="Upload_PRO" onchange="changeProfilePic(event)">
+                        <div class="card-body">
+                        <h4 class="card-title text-center" id="userName"><%= User %> </h4>
+                        <p class="card-text text-center">Some Information here</p>
+                        <div class="col-md-10 m-auto">
+                            <button type="submit" class="btn btn-primary">Save Photo</button>
+                            <button class="btn btn-outline-primary m-md-2" >Edit</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+                <div class="list-group " id="userGroup">
+                    <% Another.forEach(function(user){ %>
+                    <li class="list-group-item togle " id="<%= user.user_name %>">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img src="img/<%= user.user_pic %>" class="anoImg" alt="another" srcset="">
+                            </div>
+                            <div class="card-body col-md-6 float-left">
+                                <h4 class="card-title"><%= user.user_name %></h4>
+                                <p class="card-text">
+                                    some text here
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                    <% })%>
+                </div>
+            </div>
+        </div>
+        <script defer src="js/client.js"></script>
+</body>
+</html>
